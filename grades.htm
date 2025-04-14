@@ -1,0 +1,574 @@
+<html>
+    <title>GRADE COMPUTATION</title>
+    <body style="background-image: url(bg.jpg); background-repeat: no-repeat; background-size:cover; background-position: center;">
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                margin: 0;
+            }
+    
+            .table-container {
+                text-align: center; /* Center the title */
+            }
+    
+            table {
+                border-collapse: separate; /* Use separate borders */
+                border-spacing: 10px; /* Space between cells */
+                margin-top: 20px; /* Space between title and table */
+            }
+    
+            th, td {
+                padding: 15px;
+                text-align: center; /* Center text in cells */
+                background-color: #F3F3F3  ; /* Background color for cells */
+                color: #333333  ; /* Text color */
+                border: 2px solid #0F0701   ; /* Border for table cells */
+                border-radius: 10px; /* Rounded corners for each cell */
+            }
+    
+            h1 {
+                margin: 0; /* Remove default margin */
+            }
+        </style>
+        <a name="top"><h1 style="margin-top: 5px; font-family: cursive; font-size: 60;">Grade Computation</h1></a> 
+        
+        <script language = "JavaScript">
+            alert ("Welcome! Let's compute your grades.");
+                var name = prompt ("Enter your name: ");
+                var sn = parseInt (prompt("Enter your student number: "));
+
+                /*PRELIM*/
+                alert ("Let's solve your Preliminary Grades, " + name);
+                
+                var prelimattendance = parseFloat (prompt("Enter your Prelim Attendance score (Total Score is 100): "));
+                if (prelimattendance > 100 || prelimattendance < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var prelimattendance = parseFloat (prompt("Enter your Prelim Attendance score (Total Score is 100): "));
+                }
+    
+                var prelima1 = parseFloat (prompt("Enter your Prelim Activity 1 Score (Total Score is 20): "));
+                if (prelima1 > 20 || prelima1 < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var prelima1 = parseFloat (prompt("Enter your Prelim Activity 1 Score: "));
+                }
+    
+                var prelima2 = parseFloat (prompt("Enter your Prelim Activity 2 Score (Total Score is 20): "));
+                if (prelima2 > 20 || prelima2 < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var prelima2 = parseFloat (prompt("Enter your Prelim Activity 2 Score (Total Score is 20): "));
+                }
+    
+                var prelima3 = parseFloat (prompt("Enter your Prelim Activity 3 Score(Total Score is 20): "));
+                if (prelima3 > 20 || prelima3 < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var prelima3 = parseFloat (prompt("Enter your Prelim Activity 3 Score (Total Score is 20): "));
+                }
+    
+                var prelimq1 = parseFloat (prompt("Enter your Quiz 1 score (Total Score is 30): "));
+                if (prelimq1 > 30 || prelimq1 < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var prelimq1 = parseFloat (prompt("Enter your Quiz 1 score (Total Score is 30): "));
+                }
+    
+                var prelimq2 = parseFloat (prompt("Enter your Quiz 2 score (Total Score is 30): "));
+                if (prelimq2 > 30 || prelimq2 < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var prelimq2 = parseFloat (prompt("Enter your Quiz 2 score (Total Score is 30): "));
+                }
+    
+                var prelimexam = parseFloat (prompt("Enter your Exam score (Total Score is 70): "));
+                if (prelimexam > 70 || prelimexam < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var prelimexam = parseFloat (prompt("Enter your Exam score (Total Score is 70): "));
+                }
+    
+                var prelimATT = prelimattendance * 0.1;
+                alert ("You're Preliminary Attendance is: " + prelimATT + "%");
+    
+                var prelimclTOTAL = ((prelima1/20)*50 + 50) + ((prelima2/20)*50 + 50) + ((prelima3/20)*50 + 50);
+                var prelimclAVE = prelimclTOTAL/3;
+                var prelimCL = prelimclAVE * 0.1;
+                alert ("You're Preliminary Class Standing is: " + prelimCL + "%");
+    
+                var prelimqzTOTAL = ((prelimq1/30)*50 + 50) + ((prelimq2/30)*50 + 50);
+                var prelimqzAVE = prelimqzTOTAL/2;
+                var prelimQZ = prelimqzAVE * 0.3;
+                alert ("You're Preliminary Quiz is: " + prelimQZ + "%");
+    
+                var prelimeTOTAL = ((prelimexam/70)*50 + 50);
+                var prelimE = prelimeTOTAL * 0.5;
+                alert ("You're Preliminary Exam is: " + prelimE + "%");
+
+                var prelim = prelimCL + prelimQZ + prelimE + prelimATT;
+                alert ("You're Prelim Grade is " + prelim);
+
+                /*MIDTERM*/
+                alert ("Let's solve your Midterm Grades, " + name + "!");
+
+                var midtermattendance = parseFloat (prompt("Enter your Midterm Attendance score (Total Score is 100): "));
+                if (midtermattendance > 100 || midtermattendance < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var midtermattendance = parseFloat (prompt("Enter your Midterm Attendance score (Total Score is 100): "));
+                }
+
+                var midterma1 = parseFloat (prompt("Enter your Midterm Activity 1 Score (Total Score is 20): "));
+                if (midterma1 > 20 || midterma1 < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var midterma1 = parseFloat (prompt("Enter your Midterm Activity 1 Score: "));
+                }
+
+                var midterma2 = parseFloat (prompt("Enter your Midterm Activity 2 Score (Total Score is 20): "));
+                if (midterma2 > 20 || midterma2 < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var midterma2 = parseFloat (prompt("Enter your Midterm Activity 2 Score (Total Score is 20): "));
+                }
+
+                var midterma3 = parseFloat (prompt("Enter your Midterm Activity 3 Score(Total Score is 20): "));
+                if (midterma3 > 20 || midterma3 < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var midterma3 = parseFloat (prompt("Enter your Midterm Activity 3 Score (Total Score is 20): "));
+                }
+
+                var midtermq1 = parseFloat (prompt("Enter your Quiz 1 score (Total Score is 30): "));
+                if (midtermq1 > 30 || midtermq1 < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var midtermq1 = parseFloat (prompt("Enter your Quiz 1 score (Total Score is 30): "));
+                }
+
+                var midtermq2 = parseFloat (prompt("Enter your Quiz 2 score (Total Score is 30): "));
+                if (midtermq2 > 30 || midtermq2 < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var midtermq2 = parseFloat (prompt("Enter your Quiz 2 score (Total Score is 30): "));
+                }
+
+                var midtermexam = parseFloat (prompt("Enter your Exam score (Total Score is 70): "));
+                if (midtermexam > 70 || midtermexam < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var midtermexam = parseFloat (prompt("Enter your Exam score (Total Score is 70): "));
+                }
+
+                var midtermATT = midtermattendance * 0.1;
+                alert ("You're Midterm Attendance is: " + midtermATT + "%");
+
+                var midtermclTOTAL = ((midterma1/20)*50 + 50) + ((midterma2/20)*50 + 50) + ((midterma3/20)*50 + 50);
+                var midtermclAVE = midtermclTOTAL/3;
+                var midtermCL = midtermclAVE * 0.1;
+                alert ("You're Midterm Class Standing is: " + midtermCL + "%");
+
+                var midtermqzTOTAL = ((midtermq1/30)*50 + 50) + ((midtermq2/30)*50 + 50);
+                var midtermqzAVE = midtermqzTOTAL/2;
+                var midtermQZ = midtermqzAVE * 0.3;
+                alert ("You're Midterm Quiz is: " + midtermQZ + "%");
+
+                var midtermeTOTAL = ((midtermexam/70)*50 + 50);
+                var midtermE = midtermeTOTAL * 0.5;
+                alert ("You're Midterm Exam is: " + midtermE + "%");
+
+                var tmidterm = midtermCL + midtermQZ + midtermE + midtermATT;
+                var midterm = (prelim*0.33) + (tmidterm*0.67);
+                alert ("You're Midterm Grade is " + midterm);
+
+                /*FINALS*/
+                alert ("Let's solve your Finals Grades, " + name+ "!");
+
+                var finalsattendance = parseFloat (prompt("Enter your Finals Attendance score (Total Score is 100): "));
+                if (finalsattendance > 100 || finalsattendance < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var finalsattendance = parseFloat (prompt("Enter your Finals Attendance score (Total Score is 100): "));
+                }
+
+                var finalsa1 = parseFloat (prompt("Enter your Finals Activity 1 Score (Total Score is 20): "));
+                if (finalsa1 > 20 || finalsa1 < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var finalsa1 = parseFloat (prompt("Enter your Finals Activity 1 Score: "));
+                }
+
+                var finalsa2 = parseFloat (prompt("Enter your Finals Activity 2 Score (Total Score is 20): "));
+                if (finalsa2 > 20 || finalsa2 < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var finalsa2 = parseFloat (prompt("Enter your Finals Activity 2 Score (Total Score is 20): "));
+                }
+
+                var finalsa3 = parseFloat (prompt("Enter your Finals Activity 3 Score(Total Score is 20): "));
+                if (finalsa3 > 20 || finalsa3 < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var finalsa3 = parseFloat (prompt("Enter your Finals Activity 3 Score (Total Score is 20): "));
+                }
+
+                var finalsq1 = parseFloat (prompt("Enter your Quiz 1 score (Total Score is 30): "));
+                if (finalsq1 > 30 || finalsq1 < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var finalsq1 = parseFloat (prompt("Enter your Quiz 1 score (Total Score is 30): "));
+                }
+
+                var finalsq2 = parseFloat (prompt("Enter your Quiz 2 score (Total Score is 30): "));
+                if (finalsq2 > 30 || finalsq2 < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var finalsq2 = parseFloat (prompt("Enter your Quiz 2 score (Total Score is 30): "));
+                }
+
+                var finalsexam = parseFloat (prompt("Enter your Exam score (Total Score is 70): "));
+                if (finalsexam > 70 || finalsexam < 0){
+                    alert ("You've entered an invalid score!");
+                    alert ("Try again.");
+                    var finalsexam = parseFloat (prompt("Enter your Exam score (Total Score is 70): "));
+                }
+
+                var finalsATT = finalsattendance * 0.1;
+                alert ("You're Finals Attendance is: " + finalsATT + "%");
+
+                var finalsclTOTAL = ((finalsa1/20)*50 + 50) + ((finalsa2/20)*50 + 50) + ((finalsa3/20)*50 + 50);
+                var finalsclAVE = finalsclTOTAL/3;
+                var finalsCL = finalsclAVE * 0.1;
+                alert ("You're Finals Class Standing is: " + finalsCL + "%");
+
+                var finalsqzTOTAL = ((finalsq1/30)*50 + 50) + ((finalsq2/30)*50 + 50);
+                var finalsqzAVE = finalsqzTOTAL/2;
+                var finalsQZ = finalsqzAVE * 0.3;
+                alert ("You're Finals Quiz is: " + finalsQZ + "%");
+
+                var finalseTOTAL = ((finalsexam/70)*50 + 50);
+                var finalsE = finalseTOTAL * 0.5;
+                alert ("You're Finals Exam is: " + finalsE + "%");
+
+                var tfinals = finalsCL + finalsQZ + finalsE + finalsATT;
+                var finals = (midterm*0.33) + (tfinals*0.67);
+                alert ("You're Finals Grade is " + finals);
+
+                var totalgrade = (prelim*0.3) + (midterm*0.3) + (finals*0.4);
+
+                if (prelim <= 100 && prelim > 97.99){
+                    var pequi = parseFloat("1.00");
+                    var premark = "OUTSTANDING";
+                }else if (prelim <= 97.49 && prelim > 94.49){
+                    var pequi = parseFloat("1.25");
+                    var premark = "VERY SATISFACTORY";
+                }else if (prelim <= 94.49 && prelim > 91.49){
+                    var pequi = parseFloat("1.50");
+                    var premark = "SATISFACTORY";
+                }else if (prelim <= 91.49 && prelim > 88.49){
+                    var pequi = parseFloat("1.75");
+                    var premark = "VERY GOOD";
+                }else if (prelim <= 88.49 && prelim > 85.49){
+                    var pequi = parseFloat("2.00");
+                    var premark = "GOOD";
+                }else if (prelim <= 85.49 && prelim > 82.49){
+                    var pequi = parseFloat("2.25");
+                    var premark = "ABOVE AVERAGE";
+                }else if (prelim <= 82.49 && prelim > 79.49){
+                    var pequi = parseFloat("2.50");
+                    var premark = "AVERAGE";
+                }else if (prelim <= 79.49 && prelim > 76.49){
+                    var pequi = parseFloat("2.75");
+                    var premark = "BELOW AVERAGE";
+                }else if (prelim <= 76.49 && prelim > 74.49){
+                    var pequi = parseFloat("3.00");
+                    var premark = "PASSED";
+                } else {
+                    var pequi = parseFloat("5.00");
+                    var premark = "FAILED";
+                }
+                
+                if (midterm <= 100 && midterm > 97.99){
+                    var mequi = parseFloat("1.00");
+                    var mremark = "OUTSTANDING";
+                }else if (midterm <= 97.49 && midterm > 94.49){
+                    var mequi = parseFloat("1.25");
+                    var mremark = "VERY SATISFACTORY";
+                }else if (midterm <= 94.49 && midterm > 91.49){
+                    var mequi = parseFloat("1.50");
+                    var mremark = "SATISFACTORY";
+                }else if (midterm <= 91.49 && midterm > 88.49){
+                    var mequi = parseFloat("1.75");
+                    var mremark = "VERY GOOD";
+                }else if (midterm <= 88.49 && midterm > 85.49){
+                    var mequi = parseFloat("2.00");
+                    var mremark = "GOOD";
+                }else if (midterm <= 85.49 && midterm > 82.49){
+                    var mequi = parseFloat("2.25");
+                    var mremark = "ABOVE AVERAGE";
+                }else if (midterm <= 82.49 && midterm > 79.49){
+                    var mequi = parseFloat("2.50");
+                    var mremark = "AVERAGE";
+                }else if (midterm <= 79.49 && midterm > 76.49){
+                    var mequi = parseFloat("2.75");
+                    var mremark = "BELOW AVERAGE";
+                }else if (midterm <= 76.49 && midterm > 74.49){
+                    var mequi = parseFloat("3.00");
+                    var mremark = "PASSED";
+                } else {
+                    var mequi = parseFloat("5.00");
+                    var mremark = "FAILED";
+                }
+
+                if (finals <= 100 && finals > 97.99){
+                    var fequi = parseFloat("1.00");
+                    var fremark = "OUTSTANDING";
+                }else if (finals <= 97.49 && finals > 94.49){
+                    var fequi = parseFloat("1.25");
+                    var fremark = "VERY SATISFACTORY";
+                }else if (finals <= 94.49 && finals > 91.49){
+                    var fequi = parseFloat("1.50");
+                    var fremark = "SATISFACTORY";
+                }else if (finals <= 91.49 && finals > 88.49){
+                    var fequi = parseFloat("1.75");
+                    var fremark = "VERY GOOD";
+                }else if (finals <= 88.49 && finals > 85.49){
+                    var fequi = parseFloat("2.00");
+                    var fremark = "GOOD";
+                }else if (finals <= 85.49 && finals > 82.49){
+                    var fequi = parseFloat("2.25");
+                    var fremark = "ABOVE AVERAGE";
+                }else if (finals <= 82.49 && finals > 79.49){
+                    var fequi = parseFloat("2.50");
+                    var fremark = "AVERAGE";
+                }else if (finals <= 79.49 && finals > 76.49){
+                    var fequi = parseFloat("2.75");
+                    var fremark = "BELOW AVERAGE";
+                }else if (finals <= 76.49 && finals > 74.49){
+                    var fequi = parseFloat("3.00");
+                    var fremark = "PASSED";
+                } else {
+                    var fequi = parseFloat("5.00");
+                    var fremark = "FAILED";
+                }
+                
+                if (totalgrade <= 100 && totalgrade > 97.99){
+                    var equi = parseFloat("1.00");
+                    var remark = "OUTSTANDING";
+                }else if (totalgrade <= 97.49 && totalgrade > 94.49){
+                    var equi = parseFloat("1.25");
+                    var remark = "VERY SATISFACTORY";
+                }else if (totalgrade <= 94.49 && totalgrade > 91.49){
+                    var equi = parseFloat("1.50");
+                    var remark = "SATISFACTORY";
+                }else if (totalgrade <= 91.49 && totalgrade > 88.49){
+                    var equi = parseFloat("1.75");
+                    var remark = "VERY GOOD";
+                }else if (totalgrade <= 88.49 && totalgrade > 85.49){
+                    var equi = parseFloat("2.00");
+                    var remark = "GOOD";
+                }else if (totalgrade <= 85.49 && totalgrade > 82.49){
+                    var equi = parseFloat("2.25");
+                    var remark = "ABOVE AVERAGE";
+                }else if (totalgrade <= 82.49 && totalgrade > 79.49){
+                    var equi = parseFloat("2.50");
+                    var remark = "AVERAGE";
+                }else if (totalgrade <= 79.49 && totalgrade > 76.49){
+                    var equi = parseFloat("2.75");
+                    var remark = "BELOW AVERAGE";
+                }else if (totalgrade <= 76.49 && totalgrade > 74.49){
+                    var equi = parseFloat("3.00");
+                    var remark = "PASSED";
+                } else {
+                    var equi = parseFloat("5.00");
+                    var remark = "FAILED";
+                }
+        </script>
+        
+        <center><table><script language = "JavaScript">
+            document.write("<tr><td>Name: </td><td>" + name + "</td></tr>");
+            document.write("<tr><td>Student Number: </td><td>" + sn + "</td></tr>");
+        </script></table></center>
+
+        <center><table><script language ="JavaScript">
+            document.write("<tr><td style='color: white;background-color: transparent; border-color: transparent;'></td><td style='color: #0F0701;background-color: #F6A7C1;'><b>Grade</b></td><td style='color: #0F0701;background-color: #F6A7C1;'><b>Equivalent</b></td><td style='color: #0F0701;background-color: #F6A7C1;'><b>Remark</b></td></tr>");
+            document.write("<tr><td><a href=#preliminaries style=color:#333333;>PRELIMINARIES</a></td><td>" + prelim + "</td><td>" + pequi + "</td><td>" + premark + "</td></tr>");
+            document.write("<tr><td><a href=#midterms style=color:#333333;>MIDTERMS</a></td><td>" + midterm + "</td><td>" + mequi + "</td><td>" + mremark + "</td></tr>");
+            document.write("<tr><td><a href=#finals style=color:#333333;>FINALS</a></td><td>" + finals + "</td><td>" + fequi + "</td><td>" + fremark + "</td></tr>");
+            document.write("<tr><td>TOTAL GRADES</td><td>" + totalgrade + "</td><td>" + equi + "</td><td>" + remark + "</td></tr>");
+        </script></table></center>
+
+        <a name = preliminaries><center><table>
+            <center><tr>
+                <td colspan="2" style="color: black;"><center><b>PRELIMINARY GRADES</b></center></td>
+            </tr> </center>
+            <tr>
+                <td>
+                    <!--Prelim Attendance-->
+                    <center><table>
+                        <script language = "JavaScript">
+                        document.write("<tr><td></td><td>Score</td><td>Grade</td></tr>");
+                        document.write("<tr><td>ATTENDANCE</td><td>" + prelimattendance + "</td><td>" + prelimATT + "%</td></tr>");
+                        </script>
+                    </table></center>
+                </td>
+                <td>
+                    <!--Prelim Exam-->
+                    <center><table>
+                        <script language = "JavaScript">
+                        document.write("<tr><td></td><td>Score</td><td>Grade</td></tr>");
+                        document.write("<tr><td>EXAMINATION</td><td>" + prelimexam + "</td><td>" + ((prelimexam/70)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td></td><td>Total: </td><td>" + prelimE + "%</td></tr>");
+                        </script>
+                    </table></center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!--Prelim Class Standing-->
+                    <center><table>
+                        <script language = "JavaScript">
+                        document.write("<tr><td>CLASS STANDING</td><td>Score</td><td>Grade</td></tr>");
+                        document.write("<tr><td>Activity 1</td><td>" + prelima1 + "</td><td>" + ((prelima1/20)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td>Activity 2</td><td>" + prelima2 + "</td><td>" + ((prelima2/20)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td>Activity 3</td><td>" + prelima3 + "</td><td>" + ((prelima3/20)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td></td><td>Average: </td><td>" + prelimclAVE + "</td></tr>");
+                        document.write("<tr><td></td><td>Total: </td><td>" + prelimCL + "%</td></tr>");
+                        </script>
+                    </table></center>
+                </td>
+                <td>
+                    <!--Prelim Quizzes-->
+                    <center><table>
+                        <script language = "JavaScript">
+                        document.write("<tr><td>QUIZZES</td><td>Score</td><td>Grade</td></tr>");
+                        document.write("<tr><td>Quiz 1</td><td>" + prelimq1 + "</td><td>" + ((prelimq1/30)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td>Quiz 2</td><td>" + prelimq2 + "</td><td>" + ((prelimq2/30)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td></td><td>Average: </td><td>" + prelimqzAVE + "</td></tr>");
+                        document.write("<tr><td></td><td>Total: </td><td>" + prelimQZ + "%</td></tr>");
+                        </script>
+                    </table></center>
+                </td>
+            </tr>
+        </table></center></a>
+
+        <p><a href="#top" style=color:#333333;>Back to top</a></p><p>ㅤ</p><center> ๋࣭ ⭑──── ๋࣭ ⭑──── ๋࣭ ⭑──── ๋࣭ ⭑──── ๋࣭ ⭑────୨ৎ────⭑๋࣭ ──── ๋࣭ ⭑──── ๋࣭ ⭑──── ๋࣭ ⭑──── ๋࣭ ⭑ </center><p>ㅤ</p><p></p>
+        <a name = midterms><center><table>
+            <center><tr>
+                <td colspan="2" style="color: black;"><center><b>MIDTERM GRADES</b></center></td>
+            </tr> </center>
+            <tr>
+                <td>
+                    <!--Midterm Attendance-->
+                    <center><table>
+                        <script language = "JavaScript">
+                        document.write("<tr><td></td><td>Score</td><td>Grade</td></tr>");
+                        document.write("<tr><td>ATTENDANCE</td><td>" + midtermattendance + "</td><td>" + midtermATT + "%</td></tr>");
+                        </script>
+                    </table></center>
+                </td>
+                <td>
+                    <!--Midterm Exam-->
+                    <center><table>
+                        <script language = "JavaScript">
+                        document.write("<tr><td></td><td>Score</td><td>Grade</td></tr>");
+                        document.write("<tr><td>EXAMINATION</td><td>" + midtermexam + "</td><td>" + midtermeTOTAL + "</td></tr>");
+                        document.write("<tr><td'></td><td>Total: </td><td>" + midtermE + "%</td></tr>");
+                        </script>
+                    </table></center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!--Midterm Class Standing-->
+                    <center><table>
+                        <script language = "JavaScript">
+                        document.write("<tr><td>CLASS STANDING</td><td>Score</td><td>Grade</td></tr>");
+                        document.write("<tr><td>Activity 1</td><td>" + midterma1 + "</td><td>" + ((midterma1/20)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td>Activity 2</td><td>" + midterma2 + "</td><td>" + ((midterma2/20)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td>Activity 3</td><td>" + midterma3 + "</td><td>" + ((midterma3/20)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td></td><td>Average: </td><td>" + midtermclAVE + "</td></tr>");
+                        document.write("<tr><td></td><td>Total: </td><td>" + midtermCL + "%</td></tr>");
+                        </script>
+                    </table></center>
+                </td>
+                <td>
+                    <!--Midterm Quizzes-->
+                    <center><table>
+                        <script language = "JavaScript">
+                        document.write("<tr><td>QUIZZES</td><td>Score</td><td>Grade</td></tr>");
+                        document.write("<tr><td>Quiz 1</td><td>" + midtermq1 + "</td><td>" + ((midtermq1/30)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td>Quiz 2</td><td>" + midtermq2 + "</td><td>" + ((midtermq2/30)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td></td><td>Average: </td><td>" + midtermqzAVE + "</td></tr>");
+                        document.write("<tr><td></td><td>Total: </td><td>" + midtermQZ + "%</td></tr>");
+                        </script>
+                    </table></center>
+                </td>
+            </tr>
+        </table></center></a>
+
+        <p><a href="#top" style=color:#333333;>Back to top</a></p><p>ㅤ</p><center> ๋࣭ ⭑──── ๋࣭ ⭑──── ๋࣭ ⭑──── ๋࣭ ⭑──── ๋࣭ ⭑────୨ৎ──── ๋࣭ ⭑──── ๋࣭ ⭑──── ๋࣭ ⭑──── ๋࣭ ⭑</center><p>ㅤ</p><p></p>
+        <a name = finals><center><table>
+            <center><tr>
+                <td colspan="2" style="color: black;"><center><b>FINALS GRADES</b></center></td>
+            </tr> </center>
+            <tr>
+                <td>
+                    <!--Finals Attendance-->
+                    <center><table>
+                        <script language = "JavaScript">
+                        document.write("<tr><td></td><td>Score</td><td>Grade</td></tr>");
+                        document.write("<tr><td>ATTENDANCE</td><td>" + finalsattendance + "</td><td>" + finalsATT + "%</td></tr>");
+                        </script>
+                    </table></center>
+                </td>
+                <td>
+                    <!--Finals Exam-->
+                    <center><table>
+                        <script language = "JavaScript">
+                        document.write("<tr><td></td><td>Score</td><td>Grade</td></tr>");
+                        document.write("<tr><td>EXAMINATION</td><td>" + finalsexam + "</td><td>" + finalseTOTAL + "</td></tr>");
+                        document.write("<tr><td></td><td>Total: </td><td>" + finalsE + "%</td></tr>");
+                        </script>
+                    </table></center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!--Finals Class Standing-->
+                    <center><table>
+                        <script language = "JavaScript">
+                        document.write("<tr><td>CLASS STANDING</td><td>Score</td><td>Grade</td></tr>");
+                        document.write("<tr><td>Activity 1</td><td>" + finalsa1 + "</td><td>" + ((finalsa1/20)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td>Activity 2</td><td>" + finalsa2 + "</td><td>" + ((finalsa2/20)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td>Activity 3</td><td>" + finalsa3 + "</td><td>" + ((finalsa3/20)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td></td><td>Average: </td><td>" + finalsclAVE + "</td></tr>");
+                        document.write("<tr><td></td><td>Total: </td><td>" + finalsCL + "%</td></tr>");
+                        </script>
+                    </table></center>
+                </td>
+                <td>
+                    <!--Finals Quizzes-->
+                    <center><table>
+                        <script language = "JavaScript">
+                        document.write("<tr><td>QUIZZES</td><td>Score</td><td>Grade</td></tr>");
+                        document.write("<tr><td>Quiz 1</td><td>" + finalsq1 + "</td><td>" + ((finalsq1/30)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td>Quiz 2</td><td>" + finalsq2 + "</td><td>" + ((finalsq2/30)*50 + 50) + "</td></tr>");
+                        document.write("<tr><td></td><td>Average: </td><td>" + finalsqzAVE + "</td></tr>");
+                        document.write("<tr><td></td><td>Total: </td><td>" + finalsQZ + "%</td></tr>");
+                        </script>
+                    </table></center>
+                </td>
+            </tr>
+        </table></center></a>
+        <p><a href="#top" style=color:#333333;>Back to top</a></p>
+    </body>
+</html>
